@@ -9,17 +9,21 @@
     fclose($programFile);
 
     if($language == "php") {
-        $output = shell_exec("C:\wamp64\bin\php\php5.6.40\php.exe $filePath 2>&1");
+        $output = shell_exec("C:\Users\rc211\Downloads\php-8.1.2-Win32-vs16-x64\php.exe $filePath 2>&1");
         echo $output;
     }
     if($language == "python") {
-        $output = shell_exec("C:\Users\akmatbekov6028\AppData\Local\Programs\Python\Python39\python.exe $filePath 2>&1");
+        $output = shell_exec("py $filePath 2>&1");
         echo $output;
     }
     if($language == "javascript") {
         rename($filePath, $filePath.".js");
         $output = shell_exec("node $filePath.js 2>&1");
         echo $output;
+    }
+    if($language == "java") {
+    $output = shell_exec("java $filePath 2>&1");
+    echo $output;
     }
     if($language == "c") {
         $outputExe = $random . ".exe";
