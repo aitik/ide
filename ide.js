@@ -25,7 +25,7 @@ function executeCode() {
 
     $.ajax({
 
-        url: "/ide/app/compiler.php",
+        url: "/compiler/compiler.php",
 
         method: "POST",
 
@@ -42,12 +42,15 @@ function executeCode() {
     // let code = editor.getValue();
     // let script = document.createElement('script');
     // try {
-    //     script.appendChild(document.createTextNode(code));
-    //     document.body.appendChild(script);
-    //     // $(".output").text(response)
+    //     // script.appendChild(document.createTextNode(code));
+    //     // document.body.appendChild(script);
+    //     // $(".output").text(script)
+    //     eval(code);
     //
     // } catch (e) {
     //     script.text = code;
-    //     document.body.appendChild(script);
+    //     $(".output").text(script)
+    //
+    //     // document.body.appendChild(script);
     // }
 }
