@@ -10,6 +10,10 @@
     font-family: sans-serif;
 }
 
+.body{
+    background: #2d2d2d;
+}
+
 .control-panel {
     color: white;
     background: #2d2d2d;
@@ -23,7 +27,10 @@
     border: 1px solid gray;
 }
 
-#editor { height: 700px; }
+#editor {
+    height: 700px;
+    resize: vertical;
+}
 
 .button-container {
     text-align: right;
@@ -39,11 +46,14 @@
 }
 
 .output {
+    overflow: auto;
+    white-space: pre-wrap;
+    color: white;
     padding: 4px;
     border: 2px solid gray;
     min-height: 100px;
+    max-height: 130px;
     width: 99%;
-    resize: none;
     background: #2d2d2d;
-
+    resize: vertical;
 }
