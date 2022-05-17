@@ -1,5 +1,9 @@
 let editor;
-
+let answer = "*\n" +
+    "**\n" +
+    "***\n" +
+    "****\n" +
+    "*****"
 window.onload = function(){
     editor = ace.edit("editor");
     editor.setTheme("ace/theme/tomorrow_night_eighties");
@@ -29,6 +33,17 @@ function executeCode() {
 
         success: function(response) {
             $(".output").text(response)
+            if(response.replace(/\s/g, '') === answer.replace(/\s/g, '')){
+                console.log(response)
+                console.log(answer)
+
+                console.log("RIGHT")
+            }
+            else{
+                console.log(response)
+                console.log(answer)
+                console.log("WRONG")
+            }
         }
     })
 
@@ -58,6 +73,21 @@ function readValue(e) {
     if(text){
         document.getElementById("problem_title").innerHTML = text;
         document.getElementById("problem_content").innerHTML = "Content of the" + text;
-
+        document.getElementById("code1").innerHTML = "        var message = \"hello world!\"; alert(message);\n";
+        if(text === " > Problem #1 "){
+            document.getElementById("problem_title").innerHTML = text;
+            document.getElementById("problem_content").innerHTML = "Output the simple pyramid pattern of 5 rows";
+            document.getElementById("code1").innerHTML =
+                "* <br>" +
+                "* * <br>" +
+                "* * * <br>" +
+                "* * * * <br>" +
+                "* * * * * ";
+        }
     }
+    answer = "*\n" +
+        "**\n" +
+        "***\n" +
+        "****\n" +
+        "*****"
 }
